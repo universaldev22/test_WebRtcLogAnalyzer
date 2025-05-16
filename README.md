@@ -1,85 +1,62 @@
+# WebRTC Log Analysis
 
-# C# Tech Challenge
+This project analyzes WebRTC log files and provides aggregated statistics on user activity and error counts. The application parses logs from a WebRTC backend system, processes user JOIN/LEAVE events, counts unique users, and aggregates error types (ERROR, CRITICAL, WARNING).
 
-## Welcome!
+## Project Design
+- The solution uses **ASP.NET Core** for the web API, which exposes an endpoint for log analysis.
+- The **Swagger/OpenAPI** integration allows for easy API documentation and testing.
+- This project is designed following the **Domain-Driven Design (DDD)** principles. The main reason for this approach is to ensure a clean separation between the core business logic and the infrastructure, improving the system's maintainability and scalability. By focusing on the core domain of log analysis and error aggregation, I was able to clearly define bounded contexts such as the **UserActivityEvent** in the **WebRtcLogAnalyzer.Domain** and the **ILogAnalysisService** in the **WebRtcLogAnalyzer.Application**. This allows the system to be flexible and easily extensible. The use of **entities**, **value objects**, and **domain services** within the **Domain** layer helped to model the problem space accurately and align the solution with real-world requirements. This approach ensures that future enhancements can be made easily without causing significant rework, as new features and requirements can be introduced in isolated layers.
 
-We're excited for you to tackle this C# coding challenge! It’s designed to give us a quick glimpse into your technical skills, and how you approach problem-solving.
 
-## Your Task (Estimated Time: **1–2 hours**)
 
-You’ll build a small service that processes a log file (`logs/webrtc_studio.log`) and exposes a simple Web API to return structured user activity data.
 
-### What to Build
+## Assumptions
 
-1. **Log Processing**: Read and extract relevant data from the provided log file (e.g., timestamps, event types, user IDs).
-2. **Data Aggregation**:
-   - Return a list of all user activity events (JOIN/LEAVE with timestamp and userId).
-   - Calculate the **total number of unique users** who joined the call.
-3. **Web API**: Create a minimal API endpoint (`/api/loganalysis`) that returns the aggregated data in JSON format (see example below).
-4. **(Optional Stretch Goal)**: Extend your solution to also extract and count error messages by severity level (e.g., `ERROR`, `CRITICAL`, `WARNING`) and include them in the response.
+- The log files are stored in the `logs` directory in the project root.
+- The WebRTC log file is named `webrtc_studio.log` and follows a specific log format (timestamps, event types, user IDs).
+- The log data will be processed through a web API that exposes the results.
 
-### Example JSON Response
+## Key Features
 
+- **Log Parsing**: Parses the WebRTC log file to extract relevant user activity and error data.
+- **User Activity**: Tracks JOIN and LEAVE events and calculates the total unique users.
+- **Error Aggregation**: Counts different types of errors (ERROR, CRITICAL, WARNING).
+- **Web API**: Exposes the aggregated data via an HTTP endpoint `/api/loganalysis`.
+
+## Design Decisions
+
+- The solution uses **ASP.NET Core** for the web API, which exposes an endpoint for log analysis.
+- **Serilog** is used for logging the application’s runtime events and errors.
+- The **Swagger/OpenAPI** integration allows for easy API documentation and testing.
+- The system is designed to process logs asynchronously to handle large log files efficiently.
+
+## Setup Instructions
+
+### 1. Clone the Repository & Install dependencies
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/universaldev22/test_WebRtcLogAnalyzer
+cd test_WebRtcLogAnalyzer
+git checkout  feature/log-analysis
+
+dotnet restore
+dotnet build
 ```
-{
-    "uniqueUsers": 3,
-    "userActivity": [
-        {
-            "userId": "456",
-            "event": "JOIN",
-            "timestamp": "2023-10-27 10:01:00"
-        }
-        // ... more user activity events
-    ],
-    "errors": {
-        "ERROR": 4,
-        "CRITICAL": 2,
-        "WARNING": 3
-    } // Optional: Only included if stretch goal is implemented
-}
+### 2. Run the Application
+```
+dotnet run --project WebRtcStudio
+``` 
+
+### 3. Test
+
+#### 3.1 Swagger Test
+```
+http://localhost:5255/swagger/index.html
 ```
 
-## Submission & Timeline
-
-We’re excited to see what you build! Please follow the steps below to submit your solution.
-
-### How to Submit
-
-* Clone this repository to your local machine.
-* In your GitHub account, create a new public repository for this project (e.g., [your-github-username]-log-analysis).
-* Copy any necessary files from this repo into your new one.
-* Develop your solution in a feature branch of your repository.
-* Include a README.md file in your repository with clear instructions on how to run your application from the CLI.
-* When you're done, open a pull request from your feature branch into the main branch of your repo.
-* In your pull request description, please include:
-  1. Any assumptions, design decisions, or trade-offs you made.
-  2. Key features and approaches you took.
-  3. Clear testing and review instructions.
-* ✅ Once submitted, please email us a link to your pull request.
-* 📌 You can also tag @livener-dev in the pull request description to notify our team directly.
-* ⏱️ Please ensure your submission is completed within the agreed time frame.
-
-## Evaluation
-
-### We'll be looking at:
-
-* **Correctness:** How accurately your code parses the log and aggregates the data.
-* **Code Quality:** Readability and maintainability.
-* **Testing:** How well you've covered key functionality with unit tests.
-* **Web API:** Functionality and JSON structure.
-
-**Note:** A working solution is required to proceed to the in-person stage of the interview.
-
-To ensure a smooth transition to the second part of the interview, please pay close attention to the `/api/loganalysis` endpoint. Your working solution here is essential for the next steps. Please double-check that it's functioning as expected!
-
-## Running Your Service
-
-Please provide instructions on how to run your application locally (e.g., commands, dependencies).
-
-## Log File & Format
-
-The log file (`webrtc_studio.log`) and a sample log file (`SAMPLE_LOG.md`) with the format details are located in the `/logs` directory.
-
-## We're Excited!
-
-We're excited to see your solution! Good luck!
+#### 3.2 Unit Test
+```
+dotnet test
+```
