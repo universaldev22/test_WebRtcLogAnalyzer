@@ -37,22 +37,23 @@ This project analyzes WebRTC log files and provides aggregated statistics on use
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/<your-github-username>/log-analysis.git
-
-cd log-analysis
+git clone https://github.com/universaldev22/test_WebRtcLogAnalyzer
+cd test_WebRtcLogAnalyzer
+git checkout  feature/log-analysis
 
 dotnet restore
+dotnet build
 ```
 ### 2. Run the Application
 ```
-dotnet run
+dotnet run --project WebRtcStudio
 ``` 
 
 ### 3. Test
 
 #### 3.1 Swagger Test
 ```
-https://localhost:7234/swagger/index.html
+http://localhost:5255/swagger/index.html
 ```
 
 #### 3.2 Unit Test
