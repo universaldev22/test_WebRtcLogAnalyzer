@@ -1,0 +1,58 @@
+# Ignore the build output folder
+bin/
+obj/
+
+# Ignore the ASP.NET temporary files
+App_Data/
+
+# User-specific files
+.vs/
+.vscode/
+.idea/
+
+# Ignore the Visual Studio for Mac files
+.vscode/
+
+# Ignore the build and publish directories
+publish/
+
+# Ignore the user-specific files from Rider
+.idea/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# JetBrains Rider
+.idea/
+
+# ASP.NET files
+appsettings.Development.json
+appsettings.Staging.json
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# ASP.NET Core enviroment variables
+.env
+
+# User-specific files from Visual Studio
+.vs2019/
+.vs2017/
+
+# Ignore JetBrains Rider config files
+.idea/
+
+# Microsoft Azure Service Configuration
+serviceConfiguration.cscfg
+serviceConfiguration.deploymentsettings
+
+# Ignore Node.js packages
+node_modules/
+npm-debug.log
+
+# Ignore log files
+*.log

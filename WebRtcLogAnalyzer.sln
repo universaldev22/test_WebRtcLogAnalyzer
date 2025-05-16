@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRtcLogAnalyzer.Api", "WebRtcStudio\WebRtcLogAnalyzer.Api.csproj", "{2EBA4D61-1CF0-45CE-8C3F-2A1D793DECF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRtcLogAnalyzer.Domain", "WebRtcStudio.Domain\WebRtcLogAnalyzer.Domain.csproj", "{270F3B69-A76B-450B-82EB-E292FC6CFB9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRtcLogAnalyzer.Application", "WebRtcStudio.Application\WebRtcLogAnalyzer.Application.csproj", "{391D818C-4D6B-4EAD-AA9A-FE63A3573BC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRtcLogAnalyzer.Infrastructure", "WebRtcStudio.Infrastructure\WebRtcLogAnalyzer.Infrastructure.csproj", "{49ACA8BC-D28E-409E-AAA0-29A98D3A5310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRtcLogAnalyzer.Tests", "WebRtcStudio.Tests\WebRtcLogAnalyzer.Tests.csproj", "{7F02A3A1-E53A-4061-8D1B-C0D18DCAD891}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EBA4D61-1CF0-45CE-8C3F-2A1D793DECF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EBA4D61-1CF0-45CE-8C3F-2A1D793DECF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EBA4D61-1CF0-45CE-8C3F-2A1D793DECF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EBA4D61-1CF0-45CE-8C3F-2A1D793DECF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{270F3B69-A76B-450B-82EB-E292FC6CFB9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270F3B69-A76B-450B-82EB-E292FC6CFB9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270F3B69-A76B-450B-82EB-E292FC6CFB9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270F3B69-A76B-450B-82EB-E292FC6CFB9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391D818C-4D6B-4EAD-AA9A-FE63A3573BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391D818C-4D6B-4EAD-AA9A-FE63A3573BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391D818C-4D6B-4EAD-AA9A-FE63A3573BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391D818C-4D6B-4EAD-AA9A-FE63A3573BC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49ACA8BC-D28E-409E-AAA0-29A98D3A5310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49ACA8BC-D28E-409E-AAA0-29A98D3A5310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49ACA8BC-D28E-409E-AAA0-29A98D3A5310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49ACA8BC-D28E-409E-AAA0-29A98D3A5310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F02A3A1-E53A-4061-8D1B-C0D18DCAD891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F02A3A1-E53A-4061-8D1B-C0D18DCAD891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F02A3A1-E53A-4061-8D1B-C0D18DCAD891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F02A3A1-E53A-4061-8D1B-C0D18DCAD891}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A876823-FA17-4A4B-9C8D-D6BBFB277896}
+	EndGlobalSection
+EndGlobal
